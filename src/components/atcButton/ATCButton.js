@@ -21,7 +21,7 @@ const ATCButton = (props) => {
 
 	return (
 		<button
-			className = {atcStyles.toCartBtn +' '+ props.style} 
+			className = {' ' + props.style} 
 			onClick = {addToCart} 
 			disabled = {isDisabled} 
 		>ADD TO CART</button>

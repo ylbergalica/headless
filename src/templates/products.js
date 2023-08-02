@@ -19,7 +19,7 @@ const ProductsPage = ({ pageContext }) => {
         )
     })
 
-    return <div>
+    return <div className="flex flex-wrap justify-evenly lg:justify-center">
         {/* <Nav />
         <CartDrawer isDrawer={true} cart={cart} setCart={setCart} />
 

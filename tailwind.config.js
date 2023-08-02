@@ -4,7 +4,14 @@ module.exports = {
     './src/**/*.js', //match any number of directories deep and any js file
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        myColor: {
+          100: 'red',
+          200: 'darkred',
+        }
+      }
+    },
   },
   plugins: [],
 }
