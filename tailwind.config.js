@@ -6,10 +6,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        myColor: {
-          100: 'red',
-          200: 'darkred',
+        nightsky: {
+          500: '#2d3b6b',
+          550: '#1d3a9b',
+          700: '#17234b',
+          750: '#2a49b0',
+          100: '#1d3a9b80',
         }
+      },
+      boxShadow: {
+        glow: '0 0 10px var(--tw-shadow-colored)',
       }
     },
   },

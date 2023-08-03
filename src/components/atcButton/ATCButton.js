@@ -7,6 +7,12 @@ import React, { useState } from "react";
 
 const ATCButton = (props) => {
 	const [isDisabled, setIsDisabled] = useState(false);
+	
+	// If there is a style prop, add it to the button
+	let baseStyle = 'h-16 rounded-sm lg:rounded text-base lg:text-xl tracking-[.3rem]';
+	if (props.style) {
+		baseStyle = props.style;
+	}
 
 	const addToCart = async () => {
 		// setIsDisabled(true);
@@ -21,7 +27,7 @@ const ATCButton = (props) => {
 
 	return (
 		<button
-			className = {' ' + props.style} 
+			className = {baseStyle + 'atc-btn'} 
 			onClick = {addToCart} 
 			disabled = {isDisabled} 
 		>ADD TO CART</button>
