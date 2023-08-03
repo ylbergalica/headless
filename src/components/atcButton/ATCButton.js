@@ -27,7 +27,7 @@ const ATCButton = (props) => {
 
 	return (
 		<button
-			className = {baseStyle + 'atc-btn'} 
+			className = {baseStyle + ' atc-btn'} 
 			onClick = {addToCart} 
 			disabled = {isDisabled} 
 		>ADD TO CART</button>

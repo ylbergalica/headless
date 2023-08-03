@@ -14,7 +14,7 @@ const ProductCard = (props) => {
 				<Link to={props.product.handle} className='product-card-title' >
 					{props.product.title}
 				</Link>
-				<p className='text-4 h-[25%] p-0 mb-0 lg:mb-4' >${props.product.variant.price}</p>
+				<p className='text-lg h-[25%] p-0 mb-0 lg:mb-4' >${props.product.variant.price}</p>
 				<div className='h-[30%] w-full p-0 lg:px-12 lg:pb-2'>
 					<ATCButton 
 						style='h-6 lg:h-10 rounded-sm lg:rounded text-sm tracking-normal' 

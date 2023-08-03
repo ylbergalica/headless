@@ -15,21 +15,21 @@ const ProductsPage = ({ pageContext }) => {
     const products = pageContext.data.map((product) => {
         return (
             <ProductCard key={product.handle} product={product} updateCart={setCart} />
-			// <div>{product.title}</div>
+            // <div>{product.title}</div>
         )
     })
 
-    return <div className="flex flex-wrap justify-evenly lg:justify-center">
+    return <div className='p-8'>
         {/* <Nav />
         <CartDrawer isDrawer={true} cart={cart} setCart={setCart} />
 
-        <div className={styles.plp}>
-            <h1>Product List</h1>
-            <div className={styles.productList}>
-                {products}
-            </div>
-        </div> */}
-		{products}
+        <div className={styles.plp}> */
+        }
+
+        <h1 className='m-8 mb-4 text-2xl'>Product List</h1>
+        <div className='flex flex-wrap justify-evenly lg:justify-center'>
+            {products}
+        </div>
     </div>
 }
 
