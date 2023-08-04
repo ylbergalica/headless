@@ -45,6 +45,16 @@
 		transition-all duration-200 ease-in-out 
 }
 
+.nav {
+	@apply
+		fixed top-0 z-40 
+		w-full h-[60px] lg:h-24 
+		px-4 lg:px-8 
+		text-nightsky-500 
+		flex items-center justify-between 
+		bg-white border-b border-nightsky-500
+}
+
 .nav-item {
 	@apply
 		flex-col 
@@ -54,4 +64,44 @@
 		after:w-0 hover:after:w-full after:h-[2px] 
 		after:bg-nightsky-500 
 		after:transition-all after:ease-in-out after:duration-200
+}
+
+.sidebar {
+	@apply
+		fixed lg:hidden z-50
+		min-h-screen w-[300px]  
+		flex flex-col 
+		text-nightsky-500 bg-white 
+		border-r border-nightsky-500 
+		transition-all ease-out duration-300
+}
+
+.sidebar-item {
+	@apply
+		h-16 p-6
+		flex items-center justify-between 
+		text-[1.1rem] 
+		border-t border-nightsky-500
+}
+
+.shop-dropdown a {
+	@apply
+		h-10 px-6
+		flex items-center  
+		text-nightsky-500 no-underline
+}
+
+.shop-dropdown-btn-open {
+	@apply
+		border-b border-nightsky-500
+}
+
+.shop-dropdown-btn-open .shop-btn {
+	@apply
+		rotate-180
+}
+
+.shop-dropdown-open {
+	@apply
+		flex flex-col
 }
