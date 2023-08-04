@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 // import Nav from "../components/navbar/Nav";
 // import CartDrawer from "../components/cartDrawer/CartDrawer";
 import ProductCard from "../components/productCard/productCard";
+import Nav from "../components/navbar/Nav";
 
 const ProductsPage = ({ pageContext }) => {
     const [cart, setCart] = useState();
@@ -19,16 +20,17 @@ const ProductsPage = ({ pageContext }) => {
         )
     })
 
-    return <div className='p-8'>
-        {/* <Nav />
+    return <div>
+        {/*
         <CartDrawer isDrawer={true} cart={cart} setCart={setCart} />
+        */}
 
-        <div className={styles.plp}> */
-        }
-
-        <h1 className='m-8 mb-4 text-2xl'>Product List</h1>
-        <div className='flex flex-wrap justify-evenly lg:justify-center'>
-            {products}
+        <Nav />
+        <div className='p-8'>
+            <h1 className='m-8 mb-4 text-2xl'>Product List</h1>
+            <div className='flex flex-wrap justify-evenly lg:justify-center'>
+                {products}
+            </div>
         </div>
     </div>
 }

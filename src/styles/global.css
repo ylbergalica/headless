@@ -44,3 +44,14 @@
 		hover:shadow-glow hover:shadow-nightsky-100 
 		transition-all duration-200 ease-in-out 
 }
+
+.nav-item {
+	@apply
+		flex-col 
+		my-0 mx-2 lg:mx-4 
+		leading-10
+		no-underline text-nightsky-500 
+		after:w-0 hover:after:w-full after:h-[2px] 
+		after:bg-nightsky-500 
+		after:transition-all after:ease-in-out after:duration-200
+}
