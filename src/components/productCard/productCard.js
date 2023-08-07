@@ -20,7 +20,7 @@ const ProductCard = (props) => {
 						style='h-6 lg:h-10 rounded-sm lg:rounded text-sm tracking-normal' 
 						variantID={props.product.variant.id} 
 						quantity={1}
-						// updateCart={props.updateCart} 
+						updateCart={props.updateCart} 
 					/>
 				</div>
 			</div>

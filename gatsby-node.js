@@ -2,35 +2,6 @@ const path = require('path');
 const { createClient } = require('@sanity/client');
 
 // Fetch product data from Shopify
-const graphQLproducts = `
-  query {
-      allShopifyProduct ( 
-          filter: {
-              totalInventory: {gte: 1}
-              variants: {elemMatch: {price: {gte: 1}}}
-          }) {
-          nodes {
-              shopifyId
-              title
-              handle
-              totalInventory
-              media {
-                  shopifyId
-                  preview {
-                      image{
-                          src
-                      }
-                  }
-              }
-              variants {
-                  shopifyId
-                  price
-              }
-          }
-      }
-  }
-`
-
 const productsQuery = `
   *[_type == 'product'] {
     'id': store.gid,
@@ -39,7 +10,7 @@ const productsQuery = `
     'image': store.previewImageUrl,
     'status': store.status,
     'variant': store.variants[0]->{
-      'id': store.id,
+      'id': store.gid,
       'price': store.price,
     },
   }
