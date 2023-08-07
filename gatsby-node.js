@@ -25,20 +25,19 @@ const mySanityClient = createClient({
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions;
 
-  // if (page.path.match(/^\/mycart/)) {
-  //   createPage({
-  //     path: '/mycart',
-  //     matchPath: '/mycart/*',
-  //     component: path.resolve('src/pages/mycart.js')
-  //   })
-  // }
+  if (page.path.match(/^\/mycart/)) {
+    createPage({
+      path: '/mycart',
+      matchPath: '/mycart/*',
+      component: path.resolve('./src/pages/mycart.js')
+    })
+  }
 }
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions;
 
   const products = await mySanityClient.fetch(productsQuery);
-  console.log(products);
 
   createPage({
     path: '/products',

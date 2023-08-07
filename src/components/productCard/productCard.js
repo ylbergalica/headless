@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 
-// import * as styles from '../../styles/plp.mod.scss'
+// import { SetCartContext } from "../../templates/products";
 import ATCButton from "../atcButton/ATCButton";
 import { Link } from "gatsby";
+import { CartContext } from "../../context/cart-context";
 
 const ProductCard = (props) => {
 	return (
@@ -20,7 +21,6 @@ const ProductCard = (props) => {
 						style='h-6 lg:h-10 rounded-sm lg:rounded text-sm tracking-normal' 
 						variantID={props.product.variant.id} 
 						quantity={1}
-						updateCart={props.updateCart} 
 					/>
 				</div>
 			</div>

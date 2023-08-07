@@ -68,7 +68,7 @@
 
 .sidebar {
 	@apply
-		fixed lg:hidden z-50
+		fixed lg:hidden top-0 z-50
 		min-h-screen w-[300px]  
 		flex flex-col 
 		text-nightsky-500 bg-white 
