@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import Nav from "../components/navbar/Nav";
 import Cart from "../components/cart/Cart";
+import CartTotal from "../components/cart/CartTotal";
 
 import { CartProvider } from "../context/cart-context";
 
@@ -12,7 +13,7 @@ const CartPage = () => {
             <Nav />
             <div className='m-auto lg:max-w-[70%] mt-16 lg:mt-24' >
                 <Cart />
-                {/* <CartTotal cart={cart} /> */}
+                <CartTotal />
             </div>
         </CartProvider>
     )
