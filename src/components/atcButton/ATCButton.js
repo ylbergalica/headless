@@ -1,12 +1,12 @@
 import React, { useState, useContext } from "react";
 
 import { addCartItem } from "../../data/cart";
+import { openCartDrawer } from "../cartDrawer/CartDrawer";
+
 import { CartContext } from "../../context/cart-context";
-// import { openCartDrawer } from "../cartDrawer/CartDrawer";
 
 const ATCButton = (props) => {
-	const [isDisabled, setIsDisabled] = useState(false);
-	const { setCart } = useContext(CartContext);
+	const { setCart, isRequesting, setIsRequesting } = useContext(CartContext);
 
 	// If there is a style prop, add it to the button
 	let baseStyle = 'h-16 rounded-sm lg:rounded text-base lg:text-xl tracking-[.3rem]';
@@ -15,21 +15,20 @@ const ATCButton = (props) => {
 	}
 
 	const addToCart = async () => {
-		setIsDisabled(true);
+		setIsRequesting(true);
 		const newCart = await addCartItem(props.variantID, props.quantity);
 
-		// openCartDrawer();
+		openCartDrawer();
 		setCart(prevUpdate => newCart);
 
-		setIsDisabled(false);
-		console.log('add to cart');
+		setIsRequesting(false);
 	}
 
 	return (
 		<button
 			className={baseStyle + ' atc-btn'}
 			onClick={addToCart}
-			disabled={isDisabled}
+			disabled={isRequesting}
 		>ADD TO CART</button>
 	)
 }

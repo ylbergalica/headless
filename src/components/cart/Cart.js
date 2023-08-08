@@ -7,21 +7,7 @@ import CartCard from "./CartCard";
 import { CartContext } from "../../context/cart-context";
 
 const Cart = (props) => {
-	// const [isRequesting, setIsRequesting] = useState(false);
 	const { cart, setCart  } = useContext(CartContext);
-
-	// const updateCartItemQuantity = (item, quantity) => {
-	// 	updateCartItem(item.id, quantity)
-	// 		.then((updatedCart) => {
-	// 			setCart(prevCart => updatedCart);
-	// 			setIsRequesting(prevRequest => false);
-	// 		})
-	// }
-
-	// const requestUpdateQuantity = (item, quantity) => {
-	// 	setIsRequesting(prevRequest => true);
-	// 	updateCartItemQuantity(item, quantity);
-	// }
 
 	const fetchCart = async () => {
 		let cartID = getExistingCheckoutId();
@@ -44,14 +30,12 @@ const Cart = (props) => {
 				key={index}
 				item={item}
 				forDrawer={props.isDrawer}
-				// handleRequest={requestUpdateQuantity}
-				// isRequesting={isRequesting}
 			/>
 		)
 	})
 
 	return (
-		<div className={'px-6 max-h-[68%]' + ' ' + "(props.isDrawer ? styles.drawerContainer : '')"} >
+		<div className={'px-6 max-h-[68%] ' + (props.isDrawer ? 'overflow-y-auto drawer-scrollbar' : '')} >
 			{itemCards}
 		</div>
 	)

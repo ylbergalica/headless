@@ -37,16 +37,16 @@ const QuantitySelector = (props) => {
 	}
 
 	return (
-		<div className={styles.selector +' '+ (props.forDrawer ? 'cardStyles.drawerCardQuantitySelector' : '')}>
-			<p className={styles.quantity +' '+ (props.forDrawer ? 'cardStyles.drawerCardQuantityValue' : '')} >{props.quantity}</p>
+		<div className={styles.selector + (props.forDrawer ? ' !mb-2' : '')}>
+			<p className={styles.quantity + (props.forDrawer ? ' !py-1 !px-5' : '')} >{props.quantity}</p>
 			<button 
-				className={styles.minusButton} 
+				className={styles.minusButton + (props.forDrawer ? ' !text-xs' : '')} 
 				onClick={() => { updateQuantity(-1, props.isServerRequest) }} 
 				disabled={isRequesting}
 			><FontAwesomeIcon icon={faMinus} /></button>
 
 			<button 
-				className={styles.plusButton}
+				className={styles.plusButton  + (props.forDrawer ? ' !text-xs' : '')}
 				onClick={() => { updateQuantity(+1, props.isServerRequest) }} 
 				disabled={isRequesting}
 				><FontAwesomeIcon icon={faPlus} /></button>

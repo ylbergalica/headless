@@ -26,8 +26,18 @@ const CartProvider = ({ children }) => {
 		console.log(cart);
 	}, [cart])
 
+	useEffect(() => {
+		console.log(isRequesting);
+	}, [isRequesting])
+
 	return (
-		<CartContext.Provider value={{ cart, setCart, updateCartItemQuantity, isRequesting }}>
+		<CartContext.Provider value={{ 
+			cart, 
+			setCart, 
+			updateCartItemQuantity, 
+			isRequesting, 
+			setIsRequesting 
+		}}>
 			{children}
 		</CartContext.Provider>
 	);

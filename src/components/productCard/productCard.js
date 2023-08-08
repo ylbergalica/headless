@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 
-// import { SetCartContext } from "../../templates/products";
 import ATCButton from "../atcButton/ATCButton";
 import { Link } from "gatsby";
-import { CartContext } from "../../context/cart-context";
 
 const ProductCard = (props) => {
 	return (
