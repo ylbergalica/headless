@@ -11,6 +11,7 @@ const CartPage = () => {
     return (
         <CartProvider>
             <Nav />
+			
             <div className='m-auto lg:max-w-[70%] mt-16 lg:mt-24' >
                 <Cart />
                 <CartTotal />

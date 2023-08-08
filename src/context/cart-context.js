@@ -1,4 +1,3 @@
-// CartContext.js
 import React, { createContext, useEffect, useState } from 'react';
 
 import { updateCartItem } from '../data/cart';
