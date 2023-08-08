@@ -7,25 +7,24 @@ import CartCard from "./CartCard";
 import { CartContext } from "../../context/cart-context";
 
 const Cart = (props) => {
-	const [isRequesting, setIsRequesting] = useState(false);
-	const { cart, setCart } = useContext(CartContext);
+	// const [isRequesting, setIsRequesting] = useState(false);
+	const { cart, setCart  } = useContext(CartContext);
 
-	const updateCartItemQuantity = (item, quantity) => {
-		updateCartItem(item.id, quantity)
-			.then((updatedCart) => {
-				setCart(prevCart => updatedCart);
-				setIsRequesting(prevRequest => false);
-			})
-	}
+	// const updateCartItemQuantity = (item, quantity) => {
+	// 	updateCartItem(item.id, quantity)
+	// 		.then((updatedCart) => {
+	// 			setCart(prevCart => updatedCart);
+	// 			setIsRequesting(prevRequest => false);
+	// 		})
+	// }
 
-	const requestUpdateQuantity = (item, quantity) => {
-		setIsRequesting(prevRequest => true);
-		updateCartItemQuantity(item, quantity);
-	}
+	// const requestUpdateQuantity = (item, quantity) => {
+	// 	setIsRequesting(prevRequest => true);
+	// 	updateCartItemQuantity(item, quantity);
+	// }
 
 	const fetchCart = async () => {
 		let cartID = getExistingCheckoutId();
-
 		if (!cartID) {
 			cartID = await getCheckoutId();
 		}
@@ -39,16 +38,14 @@ const Cart = (props) => {
 		fetchCart();
 	}, [])
 
-	console.log(cart)
-
 	const itemCards = cart.lineItems?.map((item, index) => {
 		return (
 			<CartCard
 				key={index}
 				item={item}
 				forDrawer={props.isDrawer}
-				handleRequest={requestUpdateQuantity}
-				isRequesting={isRequesting}
+				// handleRequest={requestUpdateQuantity}
+				// isRequesting={isRequesting}
 			/>
 		)
 	})

@@ -10,8 +10,7 @@ const CartPage = () => {
     return (
         <CartProvider>
             <Nav />
-            <div className='m-auto lg:max-w-[70%] mt-16' >
-				<h1>'cart.lineItems[0].title'</h1>
+            <div className='m-auto lg:max-w-[70%] mt-16 lg:mt-24' >
                 <Cart />
                 {/* <CartTotal cart={cart} /> */}
             </div>
