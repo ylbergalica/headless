@@ -16,18 +16,10 @@ const CartProvider = ({ children }) => {
 				setIsRequesting(prevRequest => false);
 			})
 	}
-
-	const requestUpdateQuantity = (item, quantity) => {
-		updateCartItemQuantity(item, quantity);
-	}
-
+	
 	useEffect(() => {
 		console.log(cart);
 	}, [cart])
-
-	useEffect(() => {
-		console.log(isRequesting);
-	}, [isRequesting])
 
 	return (
 		<CartContext.Provider value={{ 

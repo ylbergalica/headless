@@ -9,23 +9,17 @@ const QuantitySelector = (props) => {
 	const { updateCartItemQuantity, isRequesting } = useContext(CartContext);
 	const quantityTimeout = useRef(); // A simple variable did not work here, a ref hook was needed to avoid any possible duplicating?
 
-	useEffect(() => {
-		console.log(isRequesting);
-	}, [isRequesting])
-
 	const updateQuantity = (number, isServerRequest) => {
 		let newQuantity;
 		// Change the front value
 		if (!(!isServerRequest && (props.quantity === 1 && number === -1))) { // If the quantity is 1 and the user is trying to decrease the quantity (and its not a server request), do not allow it
 			newQuantity = props.quantity + number;
-			console.log("tryina update quantity to " + newQuantity);
 			// props.updateValueState(prevQuantity => newQuantity);
 		}
 
 		if (isServerRequest) {
 			clearTimeout(quantityTimeout.current); // If there exists a timout, clear it
 			updateCartItemQuantity(props.lineItem, newQuantity); // Update the quantity immediately
-			// quantityTimeout.current = setTimeout(() => { props.handleRequest(props.lineItem, newQuantity) }, 1000); // Update the quantity after 1 second, leaving room for the user to change quantity efficiently
 		}
 	}
 

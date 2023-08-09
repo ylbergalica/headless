@@ -1,21 +1,20 @@
 import * as React from "react";
-import { useState, useEffect, useContext } from "react";
 
-import ProductCard from "../components/productCard/productCard";
 import Nav from "../components/navbar/Nav";
-import { CartContext, CartProvider } from "../context/cart-context";
-import ProudctList from "../components/productList/productList";
+import ProudctList from "../components/productList/ProductList";
 import CartDrawer from "../components/cartDrawer/CartDrawer";
 
+import { CartProvider } from "../context/cart-context";
+
 const ProductsPage = ({ pageContext }) => {
-    return (
-        <CartProvider>
+	return (
+		<CartProvider>
 			<Nav />
 			<CartDrawer />
 
-            <ProudctList productList={pageContext.data} />
-        </CartProvider>
-    )
+			<ProudctList productList={pageContext.data} />
+		</CartProvider>
+	)
 }
 
 export default ProductsPage;

@@ -48,17 +48,17 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Create a page for each product
-  // products.data.allShopifyProduct.nodes.forEach(node => {
-  //   createPage({
-  //     path: `/products/${node.handle}`, // Set this as the path
-  //     component: path.resolve('./src/templates/product-template.js'), // Use this template (component)
-  //     context: node // Give the product itself as the context (props)
-  //   });
-  // });
+  products.forEach(product => {
+    createPage({
+      path: `/products/${product.handle}`, // Set this as the path
+      component: path.resolve('./src/templates/product-template.js'), // Use this template (component)
+      context: product // Give the product itself as the context (props)
+    });
+  });
 
-  // createRedirect({
-  //   fromPath: '/',
-  //   toPath: '/products/',
-  //   redirectInBrowser: true
-  // })
+  createRedirect({
+    fromPath: '/',
+    toPath: '/products/',
+    redirectInBrowser: true
+  })
 }
