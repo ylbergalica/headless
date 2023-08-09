@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import QuantitySelector from "../quantitySelector/QuantitySelector";
 
+import { CartContext } from "../../context/cart-context";
+
 const CartCard = (props) => {
 	const [quantity, setQuantity] = useState(props.item.quantity);
+	const { updateCartItemQuantity } = useContext(CartContext);
 
 	useEffect(() => {
 		setQuantity(prevQuantity => props.item.quantity)
@@ -23,7 +26,7 @@ const CartCard = (props) => {
 				/>
 				<button 
 					className={'text-xs lg:text-sm py-[.1rem] px-2 lg:py-2 lg:px-4 tracking-[.3rem] bg-transparent border border-zinc-300 transition-all ease-out duration-100 cursor-pointer hover:bg-red-100 hover:border-red-700 shadow-glow hover:shadow-red-300 ' + (props.forDrawer ? '!text-xs !py-1 !px-2' : '')} 
-					onClick={() => {props.handleRequest(props.item, 0)} } 
+					onClick={() => {updateCartItemQuantity(props.item, 0)} } 
 					disabled={props.isRequesting}
 				>REMOVE</button> 
 			</div>

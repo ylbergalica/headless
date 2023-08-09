@@ -56,9 +56,9 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  createRedirect({
-    fromPath: '/',
-    toPath: '/products/',
-    redirectInBrowser: true
-  })
+//   createRedirect({
+//     fromPath: '/',
+//     toPath: '/products/',
+//     redirectInBrowser: true
+//   })
 }

@@ -128,3 +128,13 @@
 .drawer-scrollbar::-webkit-scrollbar-thumb:hover {
 	background: rgb(132, 132, 132);
 }
+
+.quantity-btn {
+	@apply
+		self-stretch 
+		px-2 
+		text-[.7rem] lg:text-sm 
+		bg-transparent hover:bg-gray-400 
+		disabled:text-zinc-400 disabled:hover:bg-transparent border-zinc-300
+		disabled:cursor-not-allowed 
+}
