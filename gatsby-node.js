@@ -3,17 +3,23 @@ const { createClient } = require('@sanity/client');
 
 // Fetch product data from Shopify
 const productsQuery = `
-  *[_type == 'product'] {
-    'id': store.gid,
-    'handle': store.slug.current,
-    'title': store.title,
-    'image': store.previewImageUrl,
-    'status': store.status,
-    'variant': store.variants[0]->{
-      'id': store.gid,
-      'price': store.price,
-    },
-  }
+	*[_type == 'product'] {
+		'id': store.gid,
+		'handle': store.slug.current,
+		'title': store.title,
+		'image': store.previewImageUrl,
+		'status': store.status,
+		'variants': store.variants[]->{
+			'id': store.id,
+			'price': store.price,
+			images[] {
+				asset -> {
+					originalFilename,
+					url
+				}
+			}
+		},
+  	}
 `
 
 const mySanityClient = createClient({

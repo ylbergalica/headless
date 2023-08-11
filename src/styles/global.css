@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    /* Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+    }
+}
+
 * {
 	@apply font-[sans-serif]
 }
@@ -137,4 +149,31 @@
 		bg-transparent hover:bg-gray-400 
 		disabled:text-zinc-400 disabled:hover:bg-transparent border-zinc-300
 		disabled:cursor-not-allowed 
+}
+
+.slider-image-size {
+	max-width: calc(90% / 4);
+}
+
+@media (min-width: 500px) {
+	.slider-image-size {
+		max-width: calc(90% / 6);
+	}
+}
+
+@media (min-width: 991px) {
+	.slider-image-size {
+		max-width: 100%;
+		height: calc(85% / 4);
+	}
+}
+
+.slider-button {
+	@apply
+		absolute
+		text-2xl text-center
+		w-full
+		border border-zinc-100 hover:border-zinc-300
+		bg-white
+		transition-all ease-out duration-200
 }
