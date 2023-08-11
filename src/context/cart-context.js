@@ -16,10 +16,6 @@ const CartProvider = ({ children }) => {
 				setIsRequesting(prevRequest => false);
 			})
 	}
-	
-	useEffect(() => {
-		console.log(cart);
-	}, [cart])
 
 	return (
 		<CartContext.Provider value={{ 
