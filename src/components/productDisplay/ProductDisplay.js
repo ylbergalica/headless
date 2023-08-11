@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ATCButton from "../atcButton/ATCButton";
 import QuantitySelector from "../quantitySelector/QuantitySelector";
 import Gallery from "../gallery/Gallery";
+import VariantSelector from "../variantSelector/VariantSelector";
 
 const ProductDisplay = ({ item }) => {
 	const [quantityValue, setQuantityValue] = useState(1);
@@ -13,6 +14,7 @@ const ProductDisplay = ({ item }) => {
 
 			<div className='max-h-[30rem] w-full lg:w-1/2 py-4 px-6 lg:px-12 order-3'>
 				<h2 className='text-2xl lg:text-[2.4rem] lg:leading-[3rem] mb-7'>{item.title}</h2>
+				<VariantSelector variants={item.variants} />
 				<h1 className='text-[1.6rem] lg:text-5xl mb-7'>${item.variants[0].price}</h1>
 				<hr className="border-zinc-500" />
 
