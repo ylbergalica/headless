@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Nav from "../components/navbar/Nav";
-import ProductList from "../components/productList/ProductList";
+// import ProductList from "../components/productList/ProductList";
 import CartDrawer from "../components/cartDrawer/CartDrawer";
 
 import { CartProvider } from "../context/cart-context";
