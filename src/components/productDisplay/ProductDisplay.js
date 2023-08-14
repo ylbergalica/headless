@@ -9,7 +9,7 @@ const ProductDisplay = ({ item }) => {
 	const [quantityValue, setQuantityValue] = useState(1);
 
 	return (
-		<div className='lg:h-[30rem] w-full m-0 flex flex-col lg:flex-row items-center justify-center'>
+		<div className='w-full m-0 flex flex-col lg:flex-row items-center justify-center'>
 			<Gallery product={item} />
 
 			<div className='max-h-[30rem] w-full lg:w-1/2 py-4 px-6 lg:px-12 order-3'>

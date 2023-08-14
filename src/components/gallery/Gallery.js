@@ -28,7 +28,6 @@ const Gallery = ({ product }) => {
 
 	let scrollButtons = [];
 	if (currentVariant?.images?.length > 4) {
-		console.log(sliderHeight + 'LAST')
 		scrollButtons.push(
 			<ScrollButton
 				key='scroll-down'
@@ -48,19 +47,15 @@ const Gallery = ({ product }) => {
 		)
 	}
 
-	useEffect(() => {
-		console.log("Gallery useEffect")
-	}, [sliderHeight])
-
 	return (
-		<div className='w-full lg:w-1/2 lg:h-full flex flex-col lg:flex-row items-center justify-center'>
+		<div className='w-full lg:w-1/2 lg:h-[30rem] flex flex-col lg:flex-row items-center justify-center'>
 			<div ref={galleryElement} className={'relative w-[95%] lg:w-[100px] lg:h-full flex flex-row lg:flex-col justify-start items-end m-0 lg:mr-4 lg:ml-12 order-1 lg:order-0'}>
 				<ImageSlider product={product} setHeight={setSliderHeight} height={sliderHeight} />
 				{scrollButtons}
 			</div>
 
-			<div className={'w-[90%] lg:min-w-[60%] lg:max-h-[30rem] flex items-center justify-center overflow-hidden select-none order-0 lg:order-1'}>
-				<img className={'lg:max-h-[30rem] min-w-fit object-contain'} src={thumbnailImage?.asset.url} />
+			<div className={'w-[90%] h-[30rem] lg:min-w-[60%] lg:max-h-[30rem] flex items-center justify-center overflow-hidden select-none order-0 lg:order-1'}>
+				<img className={'lg:max-h-[30rem] lg:min-w-fit object-contain'} src={thumbnailImage?.asset.url} />
 			</div>
 		</div>
 	)

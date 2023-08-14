@@ -9,6 +9,10 @@ const productsQuery = `
 		'title': store.title,
 		'image': store.previewImageUrl,
 		'status': store.status,
+		features[] {
+			title,
+			'content': body[0].children[0].text
+		},
 		'variants': store.variants[]->{
 			'id': store.id,
 			'price': store.price,

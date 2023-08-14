@@ -3,7 +3,11 @@ import * as React from "react";
 import ProductCard from "../productCard/productCard";
 
 const ProudctList = ({ productList }) => {
-	const products = productList.map((product) => {
+	const activeProducts = productList.filter((product) => {
+		return product.status === 'active';
+	})
+
+	const products = activeProducts.map((product) => {
 		return (
 			<ProductCard key={product.handle} product={product} />
 		)
