@@ -16,6 +16,7 @@ const productsQuery = `
 		'variants': store.variants[]->{
 			'id': store.id,
 			'price': store.price,
+			'available': store.inventory.isAvailable,
 			images[] {
 				asset -> {
 					originalFilename,

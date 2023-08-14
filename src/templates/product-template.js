@@ -16,7 +16,7 @@ const ProductTemplate = ({ pageContext }) => {
 			<CartDrawer />
 
 			<VariantProvider>
-				<div className='mt-24 lg:h-[70vh] flex items-center lg:justify-center'>
+				<div className='mt-16 lg:mt-32 lg:h-[70vh] flex items-start lg:justify-center'>
 					<ProductDisplay item={item} />
 				</div>
 			</VariantProvider>

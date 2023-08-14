@@ -53,7 +53,7 @@ const Gallery = ({ product }) => {
 			</div>
 
 			<div className={'w-[90%] h-[30rem] lg:min-w-[60%] lg:max-h-[30rem] flex items-center justify-center overflow-hidden select-none order-0 lg:order-1'}>
-				<img className={'lg:max-h-[30rem] lg:min-w-fit object-contain'} src={thumbnailImage?.asset.url} />
+				<img className={'max-h-full lg:max-h-[30rem] lg:min-w-fit object-contain'} src={thumbnailImage?.asset.url} />
 			</div>
 		</div>
 	)

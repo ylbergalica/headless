@@ -40,7 +40,7 @@ const ImageSlider = ({ setHeight }) => {
 	}, [images, currentVariant])
 
 	return (
-		<div ref={imagesElement} id="images" className='w-full h-24 lg:h-full relative mt-[5%] flex flex-row lg:flex-col items-center justify-start overflow-x-auto overflow-y-hidden lg:overflow-y-auto lg:no-scrollbar' >
+		<div ref={imagesElement} id="images" className='w-full max-h-24 lg:max-h-full lg:h-full relative mt-[5%] flex flex-row lg:flex-col items-center justify-start overflow-x-auto overflow-y-hidden lg:overflow-y-auto lg:no-scrollbar' >
 			{images}
 		</div>
 	)

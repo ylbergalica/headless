@@ -11,10 +11,15 @@ const VariantProvider = ({ children }) => {
 	const updateThumbnail = (image) => {
 		if (image !== undefined) {
 			setThumbnail(image);
-			setActiveImageIndex(currentVariant.images.indexOf(image));
+			setActiveImageIndex(currentVariant?.images.indexOf(image));
 		}
 		else {
-			setThumbnail(currentVariant?.images[0]);
+			if (currentVariant?.images) {
+				setThumbnail(currentVariant?.images[0]);
+			}
+			else {
+				setThumbnail(null);
+			}
 			setActiveImageIndex(0);
 		}
 	}
