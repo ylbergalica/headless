@@ -2,7 +2,7 @@ import * as React from "react";
 
 import ProductCard from "../productCard/ProductCard";
 
-const ProudctList = ({ productList }) => {
+const ProductList = ({ productList }) => {
 	const activeProducts = productList.filter((product) => {
 		return product.status === 'active';
 	})
@@ -25,4 +25,4 @@ const ProudctList = ({ productList }) => {
 	)
 }
 
-export default ProudctList;
+export default ProductList;
