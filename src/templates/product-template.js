@@ -1,11 +1,11 @@
 import React from "react";
 
-import Nav from "../components/navbar/Nav.js";
-import CartDrawer from "../components/cartDrawer/CartDrawer.js";
-import ProductDisplay from "../components/productDisplay/ProductDisplay.js";
+import Nav from "../components/navbar/Nav";
+import CartDrawer from "../components/cartDrawer/CartDrawer";
+import ProductDisplay from "../components/productDisplay/ProductDisplay";
 
-import { CartProvider } from "../context/cart-context.js";
-import { VariantProvider } from "../context/variant-context.js";
+import { CartProvider } from "../context/cart-context";
+import { VariantProvider } from "../context/variant-context";
 
 const ProductTemplate = ({ pageContext }) => {
 	const item = pageContext;
