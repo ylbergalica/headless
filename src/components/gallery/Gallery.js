@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 
 import ImageSlider from "./ImageSlider";
 import ScrollButton from "./ScrollButton";
