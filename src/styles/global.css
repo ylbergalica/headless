@@ -170,6 +170,7 @@
 
 .slider-button {
 	@apply
+		!hidden lg:block
 		absolute
 		text-2xl text-center
 		w-full

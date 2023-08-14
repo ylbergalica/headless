@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Accordion = ({ title, children }) => {
-	const [isOpen, setIsOpen] = useState(true);
+	const [isOpen, setIsOpen] = useState(false);
 
 	const arrowStyle = isOpen ? "transform rotate-180" : "";
 	const contentDisplay = isOpen ? "flex" : "hidden";

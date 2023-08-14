@@ -4,8 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const ScrollButton = (props) => {
+	console.log(props.classes);
+
 	return (
-        <button className={'slider-button ' + props.classes} onClick={props.onClick} style={props.style} >
+        <button className={'slider-button ' + props.classes} onClick={props.onClick} >
             <FontAwesomeIcon icon={faChevronDown} />
         </button>
 	)

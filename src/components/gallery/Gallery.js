@@ -31,18 +31,16 @@ const Gallery = ({ product }) => {
 		scrollButtons.push(
 			<ScrollButton
 				key='scroll-down'
-				classes='bottom-0'
+				classes={'bottom-0 ' + (Math.round(scroll) < sliderHeight ? 'lg:!block' : 'none')}
 				onClick={() => { galleryScroll("down") }}
-				style={{ display: (Math.round(scroll) < sliderHeight) ? 'block' : 'none' }}
 			/>
 		)
 
 		scrollButtons.push(
 			<ScrollButton
 				key='scroll-up'
-				classes='top-0 transform rotate-180'
+				classes={'top-0 transform rotate-180 ' + (scroll > 0 ? 'lg:!block' : 'none')}
 				onClick={() => { galleryScroll("up") }}
-				style={{ display: (scroll > 0) ? 'block' : 'none' }}
 			/>
 		)
 	}
