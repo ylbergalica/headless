@@ -60,6 +60,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Create a page for each product
   products.forEach(product => {
+	console.log(product.title);
     createPage({
       path: `/products/${product.handle}`, // Set this as the path
       component: path.resolve('./src/templates/product-template.js'), // Use this template (component)
@@ -67,9 +68,9 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-//   createRedirect({
-//     fromPath: '/',
-//     toPath: '/products/',
-//     redirectInBrowser: true
-//   })
+  createRedirect({
+    fromPath: '/',
+    toPath: '/products/',
+    redirectInBrowser: true
+  })
 }

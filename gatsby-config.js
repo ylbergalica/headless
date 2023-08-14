@@ -15,6 +15,7 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
+	`gatsby-plugin-netlify-cms-paths`,
     {
       resolve: `gatsby-source-sanity`,
       options: {
