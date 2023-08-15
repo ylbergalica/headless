@@ -13,7 +13,11 @@ const productsQuery = `
 			title,
 			'content': body[0].children[0].text
 		},
-		'variants': store.variants[]->{
+		'options': store.options[] {
+			name,
+			values,
+		},
+		'variants': store.variants[] -> {
 			'id': store.gid,
 			'title': store.title,
 			'price': store.price,

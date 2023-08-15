@@ -3,13 +3,13 @@ import React, { useContext, useRef, useState } from "react";
 import ImageSlider from "./ImageSlider";
 import ScrollButton from "./ScrollButton";
 
-import { VariantContext } from "../../context/variant-context";
+import { ItemContext } from "../../context/variant-context";
 
-const Gallery = ({ product }) => {	
+const Gallery = () => {	
 	const [scroll, setScroll] = useState(0);
 	const [sliderHeight, setSliderHeight] = useState(1);
 
-	const { currentVariant, thumbnailImage, imagesElement } = useContext(VariantContext);
+	const { currentVariant, thumbnailImage, imagesElement } = useContext(ItemContext);
 	
 	const galleryElement = useRef();
 	// const imagesElement = useRef();
@@ -48,7 +48,7 @@ const Gallery = ({ product }) => {
 	return (
 		<div className='w-full lg:w-1/2 lg:h-[30rem] flex flex-col lg:flex-row items-center justify-center'>
 			<div ref={galleryElement} className={'relative w-[95%] lg:w-[100px] lg:h-full flex flex-row lg:flex-col justify-start items-end m-0 lg:mr-4 lg:ml-12 order-1 lg:order-0'}>
-				<ImageSlider product={product} setHeight={setSliderHeight} height={sliderHeight} />
+				<ImageSlider setHeight={setSliderHeight} />
 				{scrollButtons}
 			</div>
 

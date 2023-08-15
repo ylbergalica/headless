@@ -1,24 +1,22 @@
 import React, { useContext, useEffect } from "react";
 
-import { VariantContext } from "../../context/variant-context";
+import OptionSelector from "./OptionSelector";
 
-const VariantSelector = (props) => {
-	const { currentVariant, setCurrentVariant } = useContext(VariantContext);
+import { ItemContext } from "../../context/variant-context";
+
+const VariantSelector = ({ options, variants }) => {
+	const { currentItem, currentVariant, setCurrentVariant } = useContext(ItemContext);
 
 	useEffect(() => {
-		setCurrentVariant(props.variants[0]);
-	}, [props.variants])
+		if (variants) {
+			setCurrentVariant(variants[0] || null);
+		}
+	}, [variants])
 
 	return (
-		<div className="mb-4 pb-2 flex overflow-x-auto">
-			{props.variants.map((variant, index) => (
-				<button 
-					key={index} 
-					className={'border border-zinc-300 px-4 mr-2 hover:bg-zinc-200 active:outline active:outline-2 active:outline-offset-[-2px] active:outline-zinc-400 ' + (currentVariant?.id === variant.id ? 'bg-zinc-200' : '')}
-					onClick={() => setCurrentVariant(variant)} 
-				>
-					{variant.title}
-				</button>
+		<div className="mb-4">
+			{options?.map((field, index) => (
+				<OptionSelector key={index} field={field} />
 			))}
 		</div>
 	)

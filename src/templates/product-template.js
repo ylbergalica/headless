@@ -5,7 +5,7 @@ import CartDrawer from "../components/cartDrawer/index";
 import ProductDisplay from "../components/productDisplay/index";
 
 import { CartProvider } from "../context/cart-context";
-import { VariantProvider } from "../context/variant-context";
+import { ItemProvider } from "../context/variant-context";
 
 const ProductTemplate = ({ pageContext }) => {
 	const item = pageContext;
@@ -15,11 +15,11 @@ const ProductTemplate = ({ pageContext }) => {
 			<Nav />
 			<CartDrawer />
 
-			<VariantProvider>
+			<ItemProvider>
 				<div className='mt-16 lg:mt-32 lg:h-[70vh] flex items-start lg:justify-center'>
 					<ProductDisplay item={item} />
 				</div>
-			</VariantProvider>
+			</ItemProvider>
 		</CartProvider>
 	);
 }

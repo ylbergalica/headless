@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef } from "react";
 
-import { VariantContext } from "../../context/variant-context";
+import { ItemContext } from "../../context/variant-context";
 
 const ImageSlider = ({ setHeight }) => {
-	const { currentVariant, updateThumbnail, activeImageIndex, setImagesElement } = useContext(VariantContext);
+	const { currentVariant, updateThumbnail, activeImageIndex, setImagesElement } = useContext(ItemContext);
 	
 	const imagesElement = useRef();
 

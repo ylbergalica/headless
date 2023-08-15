@@ -1,9 +1,12 @@
 import React, { createContext, useEffect, useState } from "react";
 
-const VariantContext = createContext();
+const ItemContext = createContext();
 
-const VariantProvider = ({ children }) => {
+const ItemProvider = ({ children }) => {
+	const [currentItem, setCurrentItem] = useState(null);
 	const [currentVariant, setCurrentVariant] = useState(null);
+	const [currentOptions, setCurrentOptions] = useState(null); // { color: 'Red' , size: 'Medium'}
+
 	const [thumbnailImage, setThumbnail] = useState(null);
 	const [activeImageIndex, setActiveImageIndex] = useState(0);
 	const [imagesElement, setImagesElement] = useState(null);
@@ -23,13 +26,42 @@ const VariantProvider = ({ children }) => {
 			setActiveImageIndex(0);
 		}
 	}
+
+	useEffect(() => {
+		let newOptions = {}
+		currentItem?.options?.forEach(field => {
+			newOptions = {
+				...newOptions,
+				[field.name]: field.values[0]
+			}
+		})
+		
+		setCurrentOptions(newOptions);
+	}, [currentItem])
 	
+	useEffect(() => {
+		setCurrentVariant(prevVariant => 
+			currentItem?.variants?.find(variant => { // Find the variant that matches the current options or return null
+				let match = true;
+				for (const [key, value] of Object.entries(currentOptions)) { // Check if the variant has the same options as the current options
+					if (!variant.title.includes(value)) {
+						match = false;
+					}
+				}
+				return match;
+			}) || null
+		)
+	}, [currentOptions])
+
 	useEffect(() => { // Set the thumbnail image to the initial image when the variant changes
 		updateThumbnail();
 	}, [currentVariant])
 
 	return (
-		<VariantContext.Provider value={{
+		<ItemContext.Provider value={{
+			currentItem,
+			setCurrentItem,
+			setCurrentOptions,
 			currentVariant, 
 			setCurrentVariant,
 			activeImageIndex,
@@ -39,8 +71,8 @@ const VariantProvider = ({ children }) => {
 			setImagesElement,
 		}}>
 			{children}
-		</VariantContext.Provider>
+		</ItemContext.Provider>
 	)
 }
 
-export { VariantContext, VariantProvider };
+export { ItemContext, ItemProvider };
