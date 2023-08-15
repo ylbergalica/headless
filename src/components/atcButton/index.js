@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 
 import { addCartItem } from "../../data/cart";
 import { openCartDrawer } from "../cartDrawer/index";
@@ -16,10 +16,13 @@ const ATCButton = (props) => {
 
 	const addToCart = async () => {
 		setIsRequesting(true);
-		const newCart = await addCartItem(props.variantID, props.quantity);
+		if (props.variantID !== undefined && props.quantity !== undefined) {
+			const newCart = await addCartItem(props.variantID, props.quantity);
 
-		openCartDrawer();
-		setCart(prevUpdate => newCart);
+			openCartDrawer();
+			setCart(prevUpdate => newCart);
+		}
+		else console.log('Cannot add to cart: variantID or quantity is undefined');
 
 		setIsRequesting(false);
 	}

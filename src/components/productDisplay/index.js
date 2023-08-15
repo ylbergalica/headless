@@ -44,7 +44,7 @@ const ProductDisplay = ({ item }) => {
 					<QuantitySelector quantity={quantityValue} updateValueState={setQuantityValue} isServerRequest={false} />
 
 					<div>
-						<ATCButton variantID={item.variants[0].id} quantity={quantityValue} />
+						<ATCButton variantID={currentVariant?.id} quantity={quantityValue} />
 					</div>
 				</div>
 			</div>
