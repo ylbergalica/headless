@@ -17,7 +17,9 @@ const ProductCard = ({ product }) => {
 
 	return (
 		<div className='product-card relative'>
-			<NotAvailableStamp display={(!isAvailable ? 'flex' : 'hidden')} />
+			<Link to={product.handle} className="absolute w-full h-full" >
+				<NotAvailableStamp display={(!isAvailable ? 'flex' : 'hidden')} />
+			</Link>
 
 			<Link to={product.handle} className='h-[130px] min-w-[130px] lg:h-[300px] cursor-pointer' >
 				<img src={product.image} className='h-[130px] lg:h-[300px]' />
