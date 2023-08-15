@@ -15,6 +15,7 @@ const productsQuery = `
 		},
 		'variants': store.variants[]->{
 			'id': store.gid,
+			'title': store.title,
 			'price': store.price,
 			'available': store.inventory.isAvailable,
 			images[] {

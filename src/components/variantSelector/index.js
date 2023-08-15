@@ -10,14 +10,14 @@ const VariantSelector = (props) => {
 	}, [props.variants])
 
 	return (
-		<div className="mb-6 flex">
+		<div className="mb-4 pb-2 flex overflow-x-auto">
 			{props.variants.map((variant, index) => (
 				<button 
 					key={index} 
 					className={'border border-zinc-300 px-4 mr-2 hover:bg-zinc-200 active:outline active:outline-2 active:outline-offset-[-2px] active:outline-zinc-400 ' + (currentVariant?.id === variant.id ? 'bg-zinc-200' : '')}
 					onClick={() => setCurrentVariant(variant)} 
 				>
-					{index + 1}
+					{variant.title}
 				</button>
 			))}
 		</div>
