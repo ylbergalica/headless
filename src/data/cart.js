@@ -16,6 +16,8 @@ export const getCheckoutId = async () => {
 };
 
 export const getCart = (checkoutId) => {
+	debugger
+	// console.log(ShopifyClient.storefrontAccessToken, " EL Token");
     return ShopifyClient.checkout.fetch(checkoutId);
 }
 
