@@ -2,7 +2,7 @@ import React from "react";
 
 import Nav from "../components/navbar/Nav";
 import CartDrawer from "../components/cartDrawer/CartDrawer";
-import ProductDisplay from "../components/productDisplay/ProductDisplay";
+import ProductDisplay from "../components/productDisplay/index";
 
 import { CartProvider } from "../context/cart-context";
 import { VariantProvider } from "../context/variant-context";

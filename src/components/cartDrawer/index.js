@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import Cart from "../cart/Cart";
+import Cart from "../cart/index";
 import CartTotal from "../cart/CartTotal";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

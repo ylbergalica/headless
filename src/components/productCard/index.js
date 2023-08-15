@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-
-import ATCButton from "../atcButton/ATCButton";
+import React from "react";
 import { Link } from "gatsby";
-import NotAvailableStamp from "../notAvailableStamp/NotAvailableStamp";
+
+import ATCButton from "../atcButton/index";
+import NotAvailableStamp from "../notAvailableStamp/index";
 
 const ProductCard = ({ product }) => {
 	let isAvailable = false;

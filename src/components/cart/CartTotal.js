@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 
-import { Link } from "gatsby";
-
 import { CartContext } from "../../context/cart-context";
 
 const CartTotal = (props) => {

@@ -1,12 +1,12 @@
 import React, { useContext, useState } from "react";
 
-import ATCButton from "../atcButton/ATCButton";
-import QuantitySelector from "../quantitySelector/QuantitySelector";
-import Gallery from "../gallery/Gallery";
-import VariantSelector from "../variantSelector/VariantSelector";
-import Accordion from "../accordion/Accordion";
-import ProductFeature from "../productFeature/ProductFeature";
-import NotAvailableStamp from "../notAvailableStamp/NotAvailableStamp";
+import ATCButton from "../atcButton/index";
+import QuantitySelector from "../quantitySelector/index";
+import Gallery from "../gallery/index";
+import VariantSelector from "../variantSelector/index";
+import Accordion from "../accordion/index";
+import ProductFeature from "../productFeature/index";
+import NotAvailableStamp from "../notAvailableStamp/index";
 
 import { VariantContext } from "../../context/variant-context";
 

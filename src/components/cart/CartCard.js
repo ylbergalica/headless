@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 
-import QuantitySelector from "../quantitySelector/QuantitySelector";
+import QuantitySelector from "../quantitySelector/index";
 
 import { CartContext } from "../../context/cart-context";
 

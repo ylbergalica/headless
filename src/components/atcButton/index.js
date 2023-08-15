@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 
 import { addCartItem } from "../../data/cart";
-import { openCartDrawer } from "../cartDrawer/CartDrawer";
+import { openCartDrawer } from "../cartDrawer/index";
 
 import { CartContext } from "../../context/cart-context";
 

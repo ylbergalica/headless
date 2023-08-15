@@ -2,7 +2,7 @@ import * as React from "react";
 
 import Nav from "../components/navbar/Nav";
 import ProductList from "../components/productList/index";
-import CartDrawer from "../components/cartDrawer/CartDrawer";
+import CartDrawer from "../components/cartDrawer/index";
 
 import { CartProvider } from "../context/cart-context";
 

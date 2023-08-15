@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import ProductCard from "../productCard/ProductCard";
+import ProductCard from "../productCard/index";
 
 const ProductList = ({ productList }) => {
 	const activeProducts = productList.filter((product) => {

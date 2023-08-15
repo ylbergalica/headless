@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 
-import { updateCartItem, getCheckoutId, getCart, getExistingCheckoutId } from '../../data/cart';
+import { getCheckoutId, getCart, getExistingCheckoutId } from '../../data/cart';
 
 import CartCard from "./CartCard";
 
