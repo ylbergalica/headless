@@ -2,10 +2,10 @@ import React, { useContext, useEffect } from "react";
 
 import OptionSelector from "./OptionSelector";
 
-import { ItemContext } from "../../context/variant-context";
+import { ItemContext } from "../../context/product-context";
 
 const VariantSelector = ({ options, variants }) => {
-	const { currentItem, currentVariant, setCurrentVariant } = useContext(ItemContext);
+	const { setCurrentVariant } = useContext(ItemContext);
 
 	useEffect(() => {
 		if (variants) {

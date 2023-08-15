@@ -3,7 +3,7 @@ import React, { useContext, useRef, useState } from "react";
 import ImageSlider from "./ImageSlider";
 import ScrollButton from "./ScrollButton";
 
-import { ItemContext } from "../../context/variant-context";
+import { ItemContext } from "../../context/product-context";
 
 const Gallery = () => {	
 	const [scroll, setScroll] = useState(0);

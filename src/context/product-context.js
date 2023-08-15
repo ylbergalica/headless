@@ -43,8 +43,8 @@ const ItemProvider = ({ children }) => {
 		setCurrentVariant(prevVariant => 
 			currentItem?.variants?.find(variant => { // Find the variant that matches the current options or return null
 				let match = true;
-				for (const [key, value] of Object.entries(currentOptions)) { // Check if the variant has the same options as the current options
-					if (!variant.title.includes(value)) {
+				for (const [key, value] of Object.entries(currentOptions)) { // For each key-value pair in the current options (OBJECT) (2 times)
+					if (!variant.title.includes(value)) { // Check if the variant title includes the value (if either doesn't match, return false)
 						match = false;
 					}
 				}

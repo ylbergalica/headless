@@ -8,7 +8,7 @@ import Accordion from "../accordion/index";
 import ProductFeature from "../productFeature/index";
 import NotAvailableStamp from "../notAvailableStamp/index";
 
-import { ItemContext } from "../../context/variant-context";
+import { ItemContext } from "../../context/product-context";
 
 const ProductDisplay = ({ item }) => {
 	const [quantityValue, setQuantityValue] = useState(1);

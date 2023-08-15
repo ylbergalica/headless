@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
 
-import { ItemContext } from "../../context/variant-context";
+import { ItemContext } from "../../context/product-context";
 
 const OptionSelector = ({ field }) => {
-	const { currentVariant, setCurrentVariant, setCurrentOptions } = useContext(ItemContext);
+	const { currentVariant, setCurrentOptions } = useContext(ItemContext);
 
 	const updateOption = (option) => {
 		setCurrentOptions(prevOptions => {
@@ -22,7 +22,7 @@ const OptionSelector = ({ field }) => {
 				{field.values.map((option, index) => (
 					<button 
 						key={index} 
-						className={'border border-zinc-300 px-4 mr-2 hover:bg-zinc-200 active:outline active:outline-2 active:outline-offset-[-2px] active:outline-zinc-400 ' + (currentVariant?.title.includes(option) ? 'bg-zinc-200' : '')}
+						className={'border border-nightsky-700 rounded py-1 px-4 mr-2 hover:outline hover:outline-2 hover:outline-offset-[-3px] hover:outline-nightsky-500 ' + (currentVariant?.title.includes(option) ? '!bg-nightsky-500 text-slate-50' : '')}
 						onClick={() => updateOption(option)} 
 					>
 						{option}

@@ -5,7 +5,7 @@ import CartDrawer from "../components/cartDrawer/index";
 import ProductDisplay from "../components/productDisplay/index";
 
 import { CartProvider } from "../context/cart-context";
-import { ItemProvider } from "../context/variant-context";
+import { ItemProvider } from "../context/product-context";
 
 const ProductTemplate = ({ pageContext }) => {
 	const item = pageContext;
