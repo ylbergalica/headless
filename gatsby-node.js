@@ -14,7 +14,7 @@ const productsQuery = `
 			'content': body[0].children[0].text
 		},
 		'variants': store.variants[]->{
-			'id': store.id,
+			'id': store.gid,
 			'price': store.price,
 			'available': store.inventory.isAvailable,
 			images[] {
