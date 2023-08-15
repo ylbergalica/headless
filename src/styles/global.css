@@ -21,7 +21,7 @@
 .product-card {
 	@apply
 		w-[90%] md:w-[40%] lg:w-[300px] 
-		h-[130px] lg:h-auto 
+		min-h-[130px] lg:h-auto 
 		mx-0 my-4 lg:mx-4
 		flex flex-row lg:flex-col items-center justify-center lg:justify-between 
 		overflow-hidden 
@@ -34,12 +34,12 @@
 		w-[60%] h-full lg:w-full
 		pl-4 lg:pl-0 
 		lg:text-center 
-		flex flex-col items-start justify-end lg:items-center 
+		flex flex-col items-start justify-evenly lg:items-center 
 }
 
 .product-card-title {
 	@apply
-		h-[45%] lg:h-20 
+		lg:h-20 
 		mb-0 lg:p-2 
 		text-[1.1rem] leading-6 text-black lg:text-xl
 		decoration-transparent hover:decoration-black hover:underline 

@@ -5,12 +5,15 @@ import ATCButton from "../atcButton/index";
 import NotAvailableStamp from "../notAvailableStamp/index";
 
 const ProductCard = ({ product }) => {
+	let variant = product.variants[0];
 	let isAvailable = false;
-	product.variants.forEach(variant => {
-		if (variant.available) {
+	for(let variantIndex = 0; variantIndex < product.variants.length; variantIndex++) {
+		if (product.variants[variantIndex].available) {
+			variant = product.variants[variantIndex];
 			isAvailable = true;
+			break;
 		}
-	});
+	}
 
 	return (
 		<div className='product-card relative'>
@@ -23,11 +26,11 @@ const ProductCard = ({ product }) => {
 				<Link to={product.handle} className='product-card-title' >
 					{product.title}
 				</Link>
-				<p className='text-lg h-[25%] p-0 mb-0 lg:mb-4' >${product.variants[0].price}</p>
-				<div className='h-[30%] w-full p-0 lg:px-12 lg:pb-2'>
+				<p className='text-lg p-0 mb-0 lg:mb-4' >${variant.price}</p>
+				<div className='w-full p-0 lg:px-12 lg:pb-2'>
 					<ATCButton 
 						style='h-6 lg:h-10 rounded-sm lg:rounded text-sm tracking-normal' 
-						variantID={product.variants[0].id} 
+						variantID={variant.id} 
 						quantity={1}
 					/>
 				</div>

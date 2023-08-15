@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 
 import Nav from "../components/navbar/Nav";
 import Cart from "../components/cart/index";
