@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useState } from "react";
 
-import ImageSlider from "./ImageSlider/index";
-import ScrollButton from "./ScrollButton/index";
+import ImageSlider from "./ImageSlider";
+import ScrollButton from "./ScrollButton";
 
 import { VariantContext } from "../../context/variant-context";
 
