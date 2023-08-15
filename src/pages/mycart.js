@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 import Nav from "../components/navbar/Nav";
-import Cart from "../components/cart/Cart";
+import Cart from "../components/cart/index";
 import CartTotal from "../components/cart/CartTotal";
 
 import { CartProvider } from "../context/cart-context";
