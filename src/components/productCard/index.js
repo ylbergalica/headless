@@ -17,7 +17,7 @@ const ProductCard = ({ product }) => {
 
 	return (
 		<div className='product-card relative'>
-			<Link to={product.handle} className="absolute w-full h-full" style={{zIndex: (!isAvailable ? '40' : '-10')}}>
+			<Link to={product.handle} className="absolute w-full h-full" style={{zIndex: (!isAvailable ? '30' : '-10')}}>
 				<NotAvailableStamp display={(!isAvailable ? 'flex' : 'hidden')} />
 			</Link>
 
