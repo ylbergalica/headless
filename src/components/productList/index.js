@@ -14,12 +14,10 @@ const ProductList = ({ productList }) => {
 	})
 
 	return (
-		<div>
-			<div className='lg:p-8'>
-				<h1 className='m-8 mb-4 text-2xl'>Product List</h1>
-				<div className='flex flex-wrap justify-evenly lg:justify-center'>
-					{products}
-				</div>
+		<div className='mt-11 lg:p-8'>
+			<h1 className='m-8 mb-4 text-2xl'>Product List</h1>
+			<div className='flex flex-wrap justify-evenly lg:justify-center'>
+				{products}
 			</div>
 		</div>
 	)
