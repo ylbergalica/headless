@@ -8,6 +8,8 @@ const CartCard = (props) => {
 	const [quantity, setQuantity] = useState(props.item.quantity);
 	const { updateCartItemQuantity } = useContext(CartContext);
 
+	console.log(props.item.variant.id)
+
 	useEffect(() => {
 		setQuantity(prevQuantity => props.item.quantity)
 	}, [props.item.quantity]) // Update the quantity when the quantity prop changes in case the server update was not successful
@@ -17,7 +19,9 @@ const CartCard = (props) => {
 			<img className={'w-[15%] flex flex-[0_0_100px] lg:flex-[0_0_170px] rounded-md ' + (props.forDrawer ? '!w-[30%] !flex-none' : '')} src={props.item.variant.image?.src} alt={props.item.variant.image?.altText} />
 
 			<div className={'w-[50%] lg:min-w-0 pl-2 flex flex-col items-start ' + (props.forDrawer ? '!w-[45%]' : '')}>
-				<h2 className={'text-lg lg:text-2xl mb-1 ' + (props.forDrawer ? '!text-lg' : '')} >{props.item.title}</h2>
+				<h2 className={'text-lg lg:text-2xl ' + (props.forDrawer ? '!text-lg' : '')} >{props.item.title}</h2>
+				<h3 className={'text-md lg:text-lg mb-2 ' + (props.forDrawer ? '!text-base' : '')} >{props.item.variant.title}</h3>
+
 				<QuantitySelector
 					quantity={quantity} 
 					forDrawer={props.forDrawer}

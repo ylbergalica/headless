@@ -13,6 +13,8 @@ import { CartContext } from "../../context/cart-context";
 const Cart = (props) => {
 	const { cart, setCart  } = useContext(CartContext);
 
+	console.log(cart)
+
 	const fetchCart = async () => {
 		let cartID = getExistingCheckoutId();
 		if (!cartID) {
