@@ -16,7 +16,7 @@ const VariantSelector = ({ options, variants }) => {
 	return (
 		<div className="mb-4">
 			{options?.map((field, index) => (
-				<OptionSelector key={index} field={field} />
+				(field.name !== "Title" && <OptionSelector key={index} field={field} />)
 			))}
 		</div>
 	)

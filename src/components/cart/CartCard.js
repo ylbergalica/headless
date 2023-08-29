@@ -20,7 +20,7 @@ const CartCard = (props) => {
 
 			<div className={'w-[50%] lg:min-w-0 pl-2 flex flex-col items-start ' + (props.forDrawer ? '!w-[45%]' : '')}>
 				<h2 className={'text-lg lg:text-2xl ' + (props.forDrawer ? '!text-lg' : '')} >{props.item.title}</h2>
-				<h3 className={'text-md lg:text-lg mb-2 ' + (props.forDrawer ? '!text-base' : '')} >{props.item.variant.title}</h3>
+				<h3 className={'text-md lg:text-lg mb-2 ' + (props.forDrawer ? '!text-base' : '')} >{(props.item.variant.title !== "Default Title") && props.item.variant.title}</h3>
 
 				<QuantitySelector
 					quantity={quantity} 
