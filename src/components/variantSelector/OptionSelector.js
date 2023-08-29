@@ -5,8 +5,6 @@ import { ItemContext } from "../../context/product-context";
 const OptionSelector = ({ field }) => {
 	const { currentVariant, setCurrentOptions } = useContext(ItemContext);
 
-	console.log(currentVariant?.title);
-
 	const updateOption = (option) => {
 		setCurrentOptions(prevOptions => {
 			return {
